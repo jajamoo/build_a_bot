@@ -7,7 +7,7 @@ const parts = {
       description:
         'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
       title: 'Large Cyclops',
-      src: images('./images/head-big-eye.png'),
+      src: images('./head-big-eye.png'),
       type: 'heads',
       cost: 1225.5,
     },
