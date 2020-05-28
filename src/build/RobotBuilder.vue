@@ -24,20 +24,20 @@
                 class="next-selector">&#9660;</button>
       </div>
       <div class="center part">
-        <div class="robot-left-arm">
+        <div class="robot-torso">
           {{ selectedRobot.torso.title }}
         </div>
-        <img :src="selectedRobot.torso.src" title="left arm"/>
+        <img :src="selectedRobot.torso.src" title="torso"/>
         <button @click="selectNextTorso()"
                 class="prev-selector">&#9668;</button>
         <button @click="selectPreviousTorso()"
                   class="next-selector">&#9658;</button>
       </div>
       <div class="right part">
-        <div class="robot-left-arm">
+        <div class="robot-right-arm">
           {{ selectedRobot.rightArm.title }}
         </div>
-        <img :src="selectedRobot.rightArm.src" title="left arm"/>
+        <img :src="selectedRobot.rightArm.src" title="right arm"/>
         <button @click="selectPreviousRightArm()"
                 class="prev-selector">&#9650;</button>
         <button @click="selectNextRightArm"
@@ -46,14 +46,14 @@
     </div>
     <div class="bottom-row">
       <div class="bottom part">
-        <div class="robot-base">
-          {{ selectedRobot.base.title }}
-        </div>
-        <img :src="selectedRobot.base.src" title="left arm"/>
+        <img :src="selectedRobot.base.src" title="base"/>
         <button @click="selectPreviousBase()"
                 class="prev-selector">&#9668;</button>
         <button @click="selectNextBase()"
                 class="next-selector">&#9658;</button>
+        <div class="robot-base">
+          {{ selectedRobot.base.title }}
+        </div>
       </div>
     </div>
   </div>
@@ -250,6 +250,16 @@ export default {
     width: auto;
   }
   .robot-right-arm {
+    position: relative;
+    text-align: center;
+    width: auto;
+  }
+  .robot-torso {
+    position: relative;
+    text-align: center;
+    width: auto;
+  }
+  .robot-base {
     position: relative;
     text-align: center;
     width: auto;
