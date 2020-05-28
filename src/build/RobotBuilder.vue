@@ -2,6 +2,9 @@
   <div>
     <div class="top-row">
       <div class="top part">
+        <div class="robot-name">
+          {{ selectedRobot.head.title }}
+        </div>
         <img :src="selectedRobot.head.src" title="head"/>
         <button @click="selectPreviousHead()"
                 class="prev-selector">&#9668;</button>
@@ -11,6 +14,9 @@
     </div>
     <div class="middle-row">
       <div class="left part">
+        <div class="robot-left-arm">
+          {{ selectedRobot.leftArm.title }}
+        </div>
         <img :src="selectedRobot.leftArm.src" title="left arm"/>
         <button @click="selectPreviousLeftArm()"
                 class="prev-selector">&#9650;</button>
@@ -18,6 +24,9 @@
                 class="next-selector">&#9660;</button>
       </div>
       <div class="center part">
+        <div class="robot-left-arm">
+          {{ selectedRobot.torso.title }}
+        </div>
         <img :src="selectedRobot.torso.src" title="left arm"/>
         <button @click="selectNextTorso()"
                 class="prev-selector">&#9668;</button>
@@ -25,6 +34,9 @@
                   class="next-selector">&#9658;</button>
       </div>
       <div class="right part">
+        <div class="robot-left-arm">
+          {{ selectedRobot.rightArm.title }}
+        </div>
         <img :src="selectedRobot.rightArm.src" title="left arm"/>
         <button @click="selectPreviousRightArm()"
                 class="prev-selector">&#9650;</button>
@@ -34,6 +46,9 @@
     </div>
     <div class="bottom-row">
       <div class="bottom part">
+        <div class="robot-base">
+          {{ selectedRobot.base.title }}
+        </div>
         <img :src="selectedRobot.base.src" title="left arm"/>
         <button @click="selectPreviousBase()"
                 class="prev-selector">&#9668;</button>
@@ -121,13 +136,13 @@ export default {
       );
     },
     selectNextBase() {
-      this.selectedTorsoIndex = getNextValidIndex(
-        this.selectedTorsoIndex, availableParts.torsos.length,
+      this.selectedBaseIndex = getNextValidIndex(
+        this.selectedBaseIndex, availableParts.bases.length,
       );
     },
     selectPreviousBase() {
       this.selectedBaseIndex = getPreviousValidIndex(
-        this.selectedBaseIndex, availableParts.torsos.length,
+        this.selectedBaseIndex, availableParts.bases.length,
       );
     },
   },
@@ -222,5 +237,21 @@ export default {
   }
   .right .next-selector {
     right: -3px;
+  }
+  .robot-name {
+    position: absolute;
+    top: -25px;
+    text-align: center;
+    width: 100%;
+  }
+  .robot-left-arm {
+    position: relative;
+    text-align: center;
+    width: auto;
+  }
+  .robot-right-arm {
+    position: relative;
+    text-align: center;
+    width: auto;
   }
 </style>
