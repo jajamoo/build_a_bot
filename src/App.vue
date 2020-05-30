@@ -10,9 +10,9 @@
         </ul>
       </nav>
     </header>
-  <main>
-    <RobotBuilder />
-  </main>
+    <main>
+      <RobotBuilder />
+    </main>
   </div>
 </template>
 
