@@ -4,28 +4,30 @@
       <nav>
         <ul>
           <li class="nav-item">
-            <img class="logo" src="./assets/build-a-bot-logo.png"/>
-            Build-a-Bot
+            <router-link class="nav-link" to="/" exact>
+              <img class="logo" src="./assets/build-a-bot-logo.png"/>
+              Build-a-Bot
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/build" exact>
+              <img class="logo" src="./assets/build-a-bot-logo.png"/>
+              Build
+            </router-link>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <RobotBuilder />
+      <router-view />
     </main>
   </div>
 </template>
 
 <script>
-// import HomePage from './home/HomePage.vue';
-// import { DataTable } from 'v-datatable-light';
-import RobotBuilder from './build/RobotBuilder.vue';
 
 export default {
   name: 'App',
-  components: {
-    RobotBuilder,
-  },
 };
 </script>
 <style>
@@ -69,5 +71,12 @@ ul {
 .logo {
   vertical-align: middle;
   height: 30px;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+.router-link-active {
+  color: white;
 }
 </style>
